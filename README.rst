@@ -28,6 +28,7 @@ Install and update using `pip`_:
 
 .. _pip: https://pip.pypa.io/en/stable/getting-started/
 
+Make sure you get your client id, secret id, and redirect uri from https://developer.spotify.com/dashboard/create
 
 A Simple Example
 ----------------
