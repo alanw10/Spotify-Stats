@@ -1,7 +1,7 @@
 
 @font-face {
     font-family: 'Circular';
-    src: url('/static/fonts/CircularSpotifyText-Bold.woff') format('woff'); /* Adjust the paths */
+    src: url('/static/fonts/CircularSpotifyText-Bold.woff') format('woff'); /* Adjust the paths if needed */
     font-weight: normal;
     font-style: normal;
 }
