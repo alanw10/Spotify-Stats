@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    <title>Spotify Statistics</title>
+</head>
+
+<body class="home">
+    {% if access_token %}
+        
+        
+        <h1>Find Your Spotify Statistics<a href='/stats'><i class="fa-solid fa-right-to-bracket"></i></a></h1>
+        <h4>by Alan Wang</h3>
+            <h5> <a href = 'https://linktr.ee/alanwangx' target="_blank" >More from Me</a></h5>
+    <form action="{{ url_for('logout') }}" method="post">
+        <button type="submit" class = "logout">Logout</button>
+    </form>
+    
+    {% else %}
+        
+        <h1>Find Your Spotify Statistics<a href='/login'><i class="fa-solid fa-right-to-bracket"></i></a></h1>
+        <h4 class = "home">by Alan Wang</h4>
+        <h5> <a href = 'https://linktr.ee/alanwangx' target="_blank" >More from Me</a></h5>
+    {% endif %}
+    
+</body>
+
+</html>
+
+</html>

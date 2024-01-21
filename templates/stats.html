@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stats.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    <title>Top Artists and Tracks</title>
+</head>
+<body>
+    <div class="hamburger-menu">
+        <input id="menu__toggle" type="checkbox" />
+        <label class="menu__btn" for="menu__toggle">
+          <span></span>
+        </label>
+    
+        <ul class="menu__box">
+            <li><a class="menu__item" href="/">Home</a>
+            
+                <a class="menu__item" href = "/logout" >
+                    <form action="{{ url_for('logout') }}" method="post">
+                        </form>
+                            Logout
+                </a>
+                <a class="menu__item" href = 'https://linktr.ee/alanwangx' target="_blank">More From Me</a>
+            </li>
+        </ul>
+        
+      </div>
+            
+            
+<div class="time-options">
+    <a href="{{ url_for('options', time_range='short_term') }}" {% if time_range == 'short_term' %}class="active"{% endif %}>Last Month</a>
+    <a href="{{ url_for('options', time_range='medium_term') }}" {% if time_range == 'medium_term' %}class="active"{% endif %}>Last 6 Months</a>
+    <a href="{{ url_for('options', time_range='long_term') }}" {% if time_range == 'long_term' %}class="active"{% endif %}>All Time</a>
+</div>
+<div class="container">
+    <div class="tracks">
+        <h1>Top Tracks</h1>
+        <ul>
+            {% for track_name, track_artist, track_id, track_image in zipped_tracks %}
+                <li>
+                    <div class="item-container">
+                        <div class="image-container">
+                            <img src="{{ track_image }}" alt="{{ track_name }}" class="track-image">
+                        </div>
+                        <div class="text-container">
+                            <p>{{ track_name }} - by {{ track_artist }}</p>
+                            <a href="https://open.spotify.com/track/{{ track_id }}" target="_blank">
+                                <i class="fa-solid fa-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    
+    <div class="artists">
+        <h1>Top Artists</h1>
+        <ul>
+            {% for artist_name, artist_id, artist_image in zipped_artists %}
+                <li>
+                    <div class="item-container">
+                        <div class="image-container">
+                            <img src="{{ artist_image }}" alt="{{ artist_name }}" class="artist-image">
+                        </div>
+                        <div class="text-container">
+                            <p>{{ artist_name }}</p>
+                            <a href="https://open.spotify.com/artist/{{ artist_id }}" target="_blank">
+                                <i class="fa-solid fa-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>
