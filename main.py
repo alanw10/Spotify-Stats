@@ -6,13 +6,13 @@ import json
 
 
 app = Flask(__name__)
-app.secret_key = 'lalalalaalllalala'
+app.secret_key = '' # Set this yourself!
 
-CLIENT_ID = 'dedb959380874dafba962a1519eefd39'
-CLIENT_SECRET = 'f7a36fba12ce4b8d992e98524aa3cd30'
-REDIRECT_URI = 'http://127.0.0.1:5000/callback'
+CLIENT_ID = '' #Get from Spotify API
+CLIENT_SECRET = 'f7a36fba12ce4b8d992e98524aa3cd30' #Get from Spotify API
+REDIRECT_URI = 'http://127.0.0.1:5000/callback' #Match your Spotify App's URI
 
-AUTH_URL = 'https://accounts.spotify.com/authorize'
+AUTH_URL = 'https://accounts.spotify.com/authorize' 
 TOKEN_URL = 'https://accounts.spotify.com/api/token'
 API_BASE_URL = 'https://api.spotify.com/v1/'
 
