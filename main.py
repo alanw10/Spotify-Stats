@@ -1,7 +1,7 @@
 import requests
 import urllib.parse
 from datetime import datetime, timedelta
-from flask import Flask, redirect, request, jsonify, session, render_template  # Add this line for importing render_template
+from flask import Flask, redirect, request, jsonify, session, render_template
 import json
 
 
